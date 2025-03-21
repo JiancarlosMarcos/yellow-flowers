@@ -1,0 +1,101 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: linear-gradient(135deg, #f0f4f8, #d1e3f3);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: clamp(20px, 3vw, 40px);
+}
+
+.dedication {
+  text-align: center;
+  margin-bottom: clamp(20px, 5vh, 60px);
+}
+
+.dedication h1 {
+  color: #2d3748;
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  line-height: 1.4;
+}
+
+.lotus-flower {
+  position: relative;
+  width: clamp(200px, 50vw, 600px);
+  height: clamp(200px, 50vw, 600px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.petal {
+  position: absolute;
+  width: clamp(60px, 16vw, 200px);
+  height: clamp(90px, 24vw, 300px);
+  background: linear-gradient(45deg, #ff69b4, #ff1493);
+  border-radius: 50% 50% 0 50%;
+  transform-origin: center;
+  opacity: 0;
+  animation: openPetal 3s ease-out forwards;
+}
+
+.center {
+  position: absolute;
+  width: clamp(30px, 8vw, 100px);
+  height: clamp(30px, 8vw, 100px);
+  background: #ffd700;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.petal-1 { transform: rotate(0deg) translateY(clamp(-45px, -12vw, -150px)); animation-delay: 0s; }
+.petal-2 { transform: rotate(45deg) translateY(clamp(-45px, -12vw, -150px)); animation-delay: 0.4s; }
+.petal-3 { transform: rotate(90deg) translateY(clamp(-45px, -12vw, -150px)); animation-delay: 0.8s; }
+.petal-4 { transform: rotate(135deg) translateY(clamp(-45px, -12vw, -150px)); animation-delay: 1.2s; }
+.petal-5 { transform: rotate(180deg) translateY(clamp(-45px, -12vw, -150px)); animation-delay: 1.6s; }
+.petal-6 { transform: rotate(225deg) translateY(clamp(-45px, -12vw, -150px)); animation-delay: 2.0s; }
+.petal-7 { transform: rotate(270deg) translateY(clamp(-45px, -12vw, -150px)); animation-delay: 2.4s; }
+.petal-8 { transform: rotate(315deg) translateY(clamp(-45px, -12vw, -150px)); animation-delay: 2.8s; }
+
+@keyframes openPetal {
+  0% {
+    transform: rotate(var(--rotation)) translateY(clamp(-45px, -12vw, -150px)) scale(0.1);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: rotate(var(--rotation)) translateY(clamp(-45px, -12vw, -150px)) scale(1);
+    opacity: 1;
+  }
+}
+
+@media (min-width: 1600px) {
+  .lotus-flower {
+    transform: scale(0.8);
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 15px;
+  }
+  
+  .dedication {
+    margin-bottom: 15px;
+  }
+}
