@@ -8,12 +8,26 @@ body {
   background: linear-gradient(135deg, #f0f4f8, #d1e3f3);
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  width: 100%;
+  padding: clamp(10px, 1vw, 10px);
+  display: flex;
   justify-content: center;
   align-items: center;
 }
 
+.logo {
+  max-width: clamp(60px, 10vw, 150px);
+  height: auto;
+}
+
 .container {
   width: 100%;
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -27,9 +41,49 @@ body {
 }
 
 .dedication h1 {
-  color: #2d3748;
-  font-size: clamp(1.5rem, 4vw, 3rem);
+  font-family: 'Dancing Script', cursive;
+  color: #333333;
+  font-size: clamp(1.1rem, 4.5vw, 2.5rem);
   line-height: 1.4;
+  margin-bottom: 1rem;
+}
+
+.dedication h2 {
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.2;
+}
+
+
+.highlight {
+  color: #333333;
+  padding: 0 0.2em;
+}
+
+.name {
+  display: inline-block;
+  padding: 0 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.name.rosa {
+  color: #f54fa2;
+  text-shadow: 2px 2px 4px rgba(209, 95, 152, 0.5);
+  font-size: 1.1em;
+  font-weight: bold;
+  /* background: linear-gradient(45deg, #ff69b4, #ff1493); */
+  --webkit-background-clip: text;
+  --webkit-text-fill-color: transparent;
+  animation: glow 2s ease-in-out infinite;
+}
+
+.name.miriam {
+  color: #af5887;
+  text-shadow: 1px 1px 2px rgba(255, 20, 147, 0.3);
+}
+
+.name:hover {
+  transform: scale(1.1);
 }
 
 .lotus-flower {
@@ -89,6 +143,14 @@ body {
     transform: scale(0.8);
   }
 }
+@media (min-width:500px) {
+  .contenido {
+    display: none;
+  }
+  .menssage-alert {
+    display: block;
+  }
+}
 
 @media (max-width: 480px) {
   .container {
@@ -97,5 +159,11 @@ body {
   
   .dedication {
     margin-bottom: 15px;
+  }
+  .menssage-alert {
+    display: none;
+  }
+  .contenido {
+    display: block;
   }
 }
