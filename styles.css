@@ -71,10 +71,30 @@ body {
   text-shadow: 2px 2px 4px rgba(209, 95, 152, 0.5);
   font-size: 1.1em;
   font-weight: bold;
-  /* background: linear-gradient(45deg, #ff69b4, #ff1493); */
   --webkit-background-clip: text;
   --webkit-text-fill-color: transparent;
   animation: glow 2s ease-in-out infinite;
+  position: relative; /* Necesario para posicionar los corazones */
+}
+
+.name.rosa::before {
+  content: '♥'; /* Corazón */
+  position: absolute;
+  top: -25px; /* Ajuste en la posición vertical */
+  font-size: 1.0em; /* Tamaño pequeño */
+  color: #ff1493;
+  opacity: 0; /* No visibles por defecto */
+  transform: scale(0); /* No visibles por defecto */
+  transition: opacity 0.3s, transform 0.3s ease; /* Transición suave */
+}
+
+.name.rosa:hover::before,
+.name.rosa:hover::after,
+.name.rosa:active::before,
+.name.rosa:active::after {
+  opacity: 1; /* Se hacen visibles al pasar el ratón o hacer clic */
+  transform: scale(1); /* Tamaño normal */
+  animation: pulse 1.5s infinite ease-in-out; /* Pulsan continuamente */
 }
 
 .name.miriam {
@@ -123,6 +143,18 @@ body {
 .petal-6 { transform: rotate(225deg) translateY(clamp(-45px, -12vw, -150px)); animation-delay: 2.0s; }
 .petal-7 { transform: rotate(270deg) translateY(clamp(-45px, -12vw, -150px)); animation-delay: 2.4s; }
 .petal-8 { transform: rotate(315deg) translateY(clamp(-45px, -12vw, -150px)); animation-delay: 2.8s; }
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.3); /* Empezamos un poco más pequeños */
+  }
+  50% {
+    transform: scale(0.5); /* Se agrandan un poco */
+  }
+  100% {
+    transform: scale(0.3); /* Vuelven a ser pequeños */
+  }
+}
 
 @keyframes openPetal {
   0% {
