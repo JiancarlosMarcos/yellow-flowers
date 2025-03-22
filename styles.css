@@ -43,14 +43,14 @@ body {
 .dedication h1 {
   font-family: 'Dancing Script', cursive;
   color: #333333;
-  font-size: clamp(1.1rem, 4.5vw, 2.5rem);
+  font-size: clamp(1.5rem, 4.5vw, 3rem);
   line-height: 1.4;
   margin-bottom: 1rem;
 }
 
 .dedication h2 {
   font-family: 'Dancing Script', cursive;
-  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-size: clamp(2.4rem, 5vw, 3.9rem);
   line-height: 1.2;
 }
 
